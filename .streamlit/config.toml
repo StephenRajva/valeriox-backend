@@ -1,0 +1,13 @@
+[theme]
+# Base theme for dark mode
+base="dark" 
+# Primary color - A vibrant royal blue for accents (buttons, selections)
+primaryColor="#4A90E2" 
+# Background color - A very deep, almost black blue-grey
+backgroundColor="#1E2749"
+# Text color - Crisp white for excellent readability
+textColor="#F0F2F6"
+# Secondary background - A slightly lighter dark blue for sidebar/containers
+secondaryBackgroundColor="#29325D"
+# Font choice (Streamlit's default sans serif is clean and modern)
+font="sans serif"

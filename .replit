@@ -1,0 +1,11 @@
+# This is the command that will run when you press "Run"
+run = "uvicorn main_portal:app --host 0.0.0.0 --port 8080"
+
+# This tells Replit to install your libraries first
+[packager]
+[packager.features]
+enabled-for-new-projects = true
+[packager.features.python-poetry]
+disabled = true
+[packager.features.python-pip]
+enabled = true
