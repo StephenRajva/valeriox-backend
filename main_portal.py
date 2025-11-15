@@ -93,10 +93,9 @@ class AIQuery(BaseModel):
 # --- Database Connection (for old report) ---
 def get_db_connection():
     try:
-        # We must URL-decode the password for psycopg2
-        password = DB_CONNECT_STRING.split(':')[2].split('@')[0].replace("%40", "@")
-        conn_string = f"postgresql://postgres:{password}@localhost:5432/unified_db"
-        conn = psycopg2.connect(conn_string)
+        # This is the correct way. It reads the same
+        # secret URL that the AI agent uses.
+        conn = psycopg2.connect(DB_CONNECT_STRING) 
         return conn
     except Exception as e:
         print(f"Database connection error: {e}")
@@ -105,7 +104,7 @@ def get_db_connection():
 # --- API Endpoints ---
 @app.get("/")
 def read_root():
-    return {"status": "AI-Assisted Unified Portal (powered by Google Gemini) is running"}
+    return {"status": "AI-Assisted Unified Portal (powered by OpenAI) is running"}
 
 # --- THE "AI CHATBOT" ENDPOINT ---
 # --- THE "AI CHATBOT" ENDPOINT ---
